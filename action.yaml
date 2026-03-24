@@ -1,0 +1,18 @@
+name: 'Commit Change Counter'
+description: 'Shows the number of lines added and removed in the latest commit'
+author: 'YourName'
+inputs:
+  token:
+    description: 'GitHub Token'
+    required: false
+    default: ${{ github.token }}
+outputs:
+  insertions:
+    description: 'Total lines added'
+  deletions:
+    description: 'Total lines removed'
+  total_changes:
+    description: 'Total sum of changes'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
